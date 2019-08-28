@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootswatch/dist/darkly/bootstrap.css";
+
+
+.navbar-nav {
+  padding-left:30px;
+  padding-right:30px;
+}
+
+.navbar-brand {
+  padding-left: 6em;
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    padding-left: 0.5em;
+  }
+
+  .container {
+    margin-top: 2em;
+  }
+}
