@@ -1,3 +1,33 @@
-<p>
-  about works!
-</p>
+
+<img width="550px" src="{{imgsrc}}" on-mouseover="myFuncHover($event)">
+<img width="550px" [src]="imgsrc" (click)="myFuncClick($event)">
+<br><br>
+<div class="jumbotron">
+<div class="row">
+  <div class="col" [ngStyle]="{
+    'background-color': clickCounter > 3 ? 'red' : 'gray',
+    'border': clickCounter > 5 ? '4px solid lightgray' : 'none'
+  }">
+<br><p>1. Method -- <input (keyup)="userInput($event)"> --> {{myTypeI}}</p>
+<p>2. Method -- <input type="text" [(ngModel)]="myTypeII"> --> {{myTypeII}}</p>
+</div>
+<div class="col">
+<strong>You've clicked second image - {{clickCounter}} times.</strong><br>
+
+<!-- IF/ELSE metoda 1. -->
+<ng-template [ngIf]="clickCounter > 3" [ngIfElse]="none">
+  <p>The click counter je <strong>veci</strong> od 3!</p>
+</ng-template>
+
+<!-- IF/ELSE metoda 2. -->
+<p *ngIf="clickCounter > 3; else none">The click counter je <strong>VECI</strong> od 3!</p>
+
+<ng-template #none>
+    <p>The click counter je <strong>manji</strong> od 3!</p>
+</ng-template>
+
+
+</div>
+</div>
+</div>
+

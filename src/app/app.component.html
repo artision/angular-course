@@ -1,31 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+<header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand">Artision</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarColor01">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
             <a routerLink="home" class="nav-link">Home</a>
           </li>
-      <li class="nav-item">
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
         <a routerLink="about" class="nav-link">About</a>
       </li>
-      <li class="nav-item">
-        <a routerLink="services" class="nav-link">Service</a>
-      </li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <a routerLink="list" class="nav-link">List</a>
+        </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">Service</a>
+        <div class="dropdown-menu" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <a routerLink="services" class="dropdown-item">Service</a>
+        </div>
 
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>
-
+</header>
 
 <div class="container">
     <router-outlet></router-outlet>
   </div>
+
 

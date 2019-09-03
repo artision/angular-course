@@ -2,22 +2,32 @@
 
 @import "~bootswatch/dist/darkly/bootstrap.css";
 
+.container {
+  margin-top: 1em;
+}
 
 .navbar-nav {
-  padding-left:30px;
-  padding-right:30px;
+  margin-left:50px;
 }
 
 .navbar-brand {
-  padding-left: 6em;
+  padding-left: 4em;
+  font-size: 24px !important;
 }
 
 @media (max-width: 576px) {
+
+  .dropdown-menu {
+    padding-left: 3em;
+  }
+
   .navbar-brand {
     padding-left: 0.5em;
   }
 
-  .container {
-
+  .navbar-nav {
+    margin-left:10px;
   }
+
 }
+
