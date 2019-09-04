@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  movies: object;
+
+  constructor(private http: HttpService) { }
+
+  /* private url: string = 'https://raw.githubusercontent.com/vega/vega/master/docs/data/movies.json'; */
+
 
   ngOnInit() {
+    this.http.getMovies().subscribe(data => {
+      this.movies = data;
+      console.log(this.movies);
+    });
   }
 
 }

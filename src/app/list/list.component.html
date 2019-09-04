@@ -1,3 +1,25 @@
-<p>
-  list works!
-</p>
+<h1>Movies</h1>
+
+<ul *ngIf="movies">
+  <li *ngFor="let movie of movies">
+  <div class="py-5">
+      <div class="container">
+        <div class="row justify-content-around">
+          <div class="col-10">
+            <div class="card" style="width: 21rem;">
+                <img src="{{ movie.Images }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">- {{ movie.Title }}</h5>
+                  <p class="card-text">{{ movie.Plot }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Year: {{ movie.Year }}</li>
+                  <li class="list-group-item">Released: {{ movie.Released }}</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

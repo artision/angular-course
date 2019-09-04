@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
+
+
 export class AboutComponent implements OnInit {
 
   clickCounter = 0;
@@ -24,8 +26,6 @@ export class AboutComponent implements OnInit {
   userInput(event: any) {
     this.myTypeI = event.target.value;
   }
-
-
 
 
   constructor() { }
