@@ -9,6 +9,29 @@ import { HomeComponent } from './home/home.component';
 import { ruta } from './app.router';
 import { ListComponent } from './list/list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterPipe } from './filter.pipe';
+import { NgxUiLoaderModule, NgxUiLoaderConfig, SPINNER, POSITION, PB_DIRECTION } from 'ngx-ui-loader';
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  fgsColor: "red",
+  fgsPosition: "center-center",
+  fgsSize: 60,
+  fgsType: "three-strings",
+  gap: 40,
+  logoPosition: "center-center",
+  logoSize: 150,
+  logoUrl: "https://raw.githubusercontent.com/t-ho/ngx-ui-loader/master/src/assets/angular.png",
+  masterLoaderId: "master",
+  overlayBorderRadius: "0",
+  overlayColor: "rgba(40, 40, 40, 0.8)",
+  pbColor: "#d00000",
+  pbDirection: "ltr",
+  pbThickness: 5,
+  hasProgressBar: true,
+  text: "Bismiletom!",
+  textColor: "#FFFFFF",
+  textPosition: "center-center",
+};
 
 @NgModule({
   declarations: [
@@ -16,13 +39,15 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     ServicesComponent,
     HomeComponent,
-    ListComponent
+    ListComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

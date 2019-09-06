@@ -1,6 +1,24 @@
-<h1>Movies</h1>
+<div class="container">
+    <div class="row">
+        <div class="form-group col-4">
+          <h1>Movies</h1>
+        </div>
 
-<ul *ngIf="movies">
+<div class="form-group col-4 ml-auto">
+  <label>Choose movie: </label>
+  <select class="form-control">
+    <option value="0">-- Movies </option>
+    <option *ngFor="let movie of movies" value={{movie.Title}}>
+      {{movie.Title}}
+    </option>
+  </select>
+</div>
+
+
+</div>
+</div>
+
+<ul>
   <li *ngFor="let movie of movies">
   <div class="py-5">
       <div class="container">

@@ -9,6 +9,7 @@ import { HttpService } from '../http.service';
 export class ListComponent implements OnInit {
 
   movies: object;
+  filterText: string;
 
   constructor(private http: HttpService) { }
 
@@ -16,6 +17,7 @@ export class ListComponent implements OnInit {
 
 
   ngOnInit() {
+
     this.http.getMovies().subscribe(data => {
       this.movies = data;
       console.log(this.movies);
