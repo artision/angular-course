@@ -1,3 +1,6 @@
+<body>
+
+
 <div class="container">
     <div class="row">
         <div class="form-group col-4">
@@ -13,10 +16,10 @@
     </option>
   </select>
 </div>
-
-
 </div>
 </div>
+
+
 
 <ul>
   <li *ngFor="let movie of movies">
@@ -24,14 +27,20 @@
       <div class="container">
         <div class="row justify-content-around">
           <div class="col-10">
-            <div class="card" style="width: 21rem;">
-                <img src="{{ movie.Images }}" class="card-img-top" alt="...">
+            <div class="card" style="width: 21rem; height: 28rem;">
+              <div class="hovereffect">
+                <img src="{{ movie.Images[1] }}" class="img-responsive card-img-top" alt="..." style="height: 15rem;">
+                <div class="overlay">
+                  <h2>{{ movie.Title }}</h2>
+                  <a class="info pointer" data-toggle="modal" data-target="#exampleModal">About</a>
+               </div>
+              </div>
                 <div class="card-body">
-                  <h5 class="card-title">- {{ movie.Title }}</h5>
+                    <h5 class="card-title">- {{ movie.Title }}</h5>
                   <p class="card-text">{{ movie.Plot }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Year: {{ movie.Year }}</li>
+                  <li class="list-group-item">Genre: {{ movie.Genre }}</li>
                   <li class="list-group-item">Released: {{ movie.Released }}</li>
                 </ul>
             </div>
@@ -39,5 +48,41 @@
         </div>
       </div>
     </div>
+
   </li>
 </ul>
+
+ <!-- Modal -->
+ <div class="modal fade" *ngFor="let movie of movies" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title col-4" id="exampleModalLabel"> {{ movie.Title }} | {{ movie.Year }}</h5>
+          <hr>
+          <b>Duration:&nbsp; </b> {{ movie.Runtime }} | {{ movie.Genre }}
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="list-group-item">
+            <img src="{{ movie.Images }}" class="img-responsive card-img-top" alt="...">
+        </div>
+        <div class="list-group-item">
+        <div class="row justify-content-md-center">
+          <div class="col col-7"><img src="../../assets/staricon.png" class="img-modal-rating" alt="...">&nbsp;&nbsp; {{ movie.imdbRating }}</div>
+          <div class="col col-2"> {{ movie.Metascore }} Metascore</div>
+        </div></div>
+        <div class="list-group-item">
+            {{ movie.Plot }}
+        </div>
+        <div class="list-group-item"><b>Director:</b> {{ movie.Director }} | <b>Stars:</b> {{ movie.Actors }}</div>
+        <div class="list-group-item"><b>IMDB votes:</b> {{ movie.imdbVotes }}</div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>

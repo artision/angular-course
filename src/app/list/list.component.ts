@@ -9,7 +9,6 @@ import { HttpService } from '../http.service';
 export class ListComponent implements OnInit {
 
   movies: object;
-  filterText: string;
 
   constructor(private http: HttpService) { }
 

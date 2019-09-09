@@ -15,3 +15,29 @@
 @keyframes slide {
   100% { bottom: 0; }
 }
+
+.display-3 {
+  position: relative;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, rgb(212, 9, 9), #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  -webkit-animation-delay: 2s;
+  animation: animate 4s linear infinite;
+  animation-delay: 2s;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}

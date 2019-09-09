@@ -28,7 +28,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   pbDirection: "ltr",
   pbThickness: 5,
   hasProgressBar: true,
-  text: "Bismiletom!",
+  text: "Loading...",
   textColor: "#FFFFFF",
   textPosition: "center-center",
 };

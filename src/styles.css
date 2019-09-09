@@ -17,7 +17,7 @@
 }
 
 .navbar-custom {
-  background-color: #a01313;
+  background-color: rgba(160,19,19, 0.9);
 }
 /* change the brand and text color */
 .navbar-custom .navbar-brand,
@@ -36,10 +36,6 @@
 
 @media (max-width: 576px) {
 
-  .dropdown-menu {
-    padding-left: 3em;
-  }
-
   .navbar-brand {
     padding-left: 0.5em;
   }
@@ -53,7 +49,7 @@
 
 
 
-
+/*
 .spinner {
   width: 40px;
   height: 40px;
@@ -82,3 +78,4 @@
     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
 }
+ */
